@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 function Form({ onAddActivity }) {
@@ -18,8 +19,6 @@ function Form({ onAddActivity }) {
     onAddActivity(activity);
     setActivity({ name: "", isForGoodWeather: false });
   }
-
-  // console.log(activity);
 
   return (
     <>
