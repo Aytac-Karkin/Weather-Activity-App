@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function Form(onAddActivity) {
+function Form({ onAddActivity }) {
   const [activity, setActivity] = useState({
     name: "",
-    isForGoodWeather: "false",
+    isForGoodWeather: false,
   });
   function handleChange(event) {
     setActivity({ ...activity, name: event.target.value }); //greift auf den Wert im inputfeld zu
@@ -16,7 +16,8 @@ function Form(onAddActivity) {
   function handleSubmit(event) {
     event.preventDefault();
     // onAddActivity(activity);
-    setActivity({ name: "", isForGoodWeather: "false" });
+    setActivity({ name: "", isForGoodWeather: false });
+    event.target.elements.activityName.focus();
   }
 
   console.log(activity);
@@ -32,6 +33,7 @@ function Form(onAddActivity) {
             id="activityName"
             name="name"
             onChange={handleChange}
+            value={activity.name}
             required
           />
         </div>
@@ -42,6 +44,7 @@ function Form(onAddActivity) {
             id="goodWeatherActivity"
             name="isForGoodWeather"
             onChange={handleCheck}
+            checked={activity.isForGoodWeather}
           />
         </div>
         <div>
