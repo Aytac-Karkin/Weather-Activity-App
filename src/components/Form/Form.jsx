@@ -15,12 +15,11 @@ function Form({ onAddActivity }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // onAddActivity(activity);
+    onAddActivity(activity);
     setActivity({ name: "", isForGoodWeather: false });
-    event.target.elements.activityName.focus();
   }
 
-  console.log(activity);
+  // console.log(activity);
 
   return (
     <>
