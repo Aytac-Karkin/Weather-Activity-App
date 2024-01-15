@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 function Form({ onAddActivity }) {
@@ -7,7 +6,7 @@ function Form({ onAddActivity }) {
     isForGoodWeather: false,
   });
   function handleChange(event) {
-    setActivity({ ...activity, name: event.target.value }); //greift auf den Wert im inputfeld zu
+    setActivity({ ...activity, name: event.target.value });
   }
 
   function handleCheck(event) {
@@ -19,6 +18,8 @@ function Form({ onAddActivity }) {
     onAddActivity(activity);
     setActivity({ name: "", isForGoodWeather: false });
   }
+
+  // console.log(activity);
 
   return (
     <>
